@@ -1,0 +1,147 @@
+Resource APIDemo
+
+domain  : http://apidemo.com/
+
+- List Student ( include Pagination ) :
+    * URL : /api/student
+    * Method : GET
+    * Request : /api/student?page=2
+    * Resource :
+        Success :
+            {
+                "liststudent": [
+                    {
+                        "id": 1,
+                        "name": "Thanh Tuan",
+                        "email": "thanhtuan@gmail.com",
+                        "address": "Quảng Nam",
+                        "phone": "09090909",
+                        "university": "Đại hoc Khoa học Huế",
+                        "created_at": null,
+                        "updated_at": null
+                    },
+                    ....................................................
+                    ....................................................
+                ],
+                "status": true,
+                "code": 200,
+                "meta": {
+                    "total": 2,
+                    "perPage": 10,
+                    "currentPage": 1
+                }
+            }
+        
+        Fails :
+            {
+                "status": false,
+                "code": 500,
+                "message": "Undefined variable: list_studentt"
+            }
+
+- Get Student byID : 
+    * URL : /api/student
+    * Method : GET
+    * Request : /api/student/1
+    * Resource :
+        Success :
+            {
+                "student": {
+                    "id": 2,
+                    "name": "Minh Duc",
+                    "email": "minhduc@gmail.com",
+                    "address": "Thanh pho Hue",
+                    "phone": "08080808",
+                    "university": "Dai hoc Khoa Hoc Hue",
+                    "created_at": null,
+                    "updated_at": null
+                },
+                "status": true,
+                "code": 200
+            }
+
+        Fails :
+            {
+                "status": false,
+                "code": 500,
+                "message": "Undefined variable: studentbyID"
+            }
+
+- Create Student ( include Validator):
+    * URL : /api/student
+    * Method : POST
+    * Request : /api/student
+    * Resource :
+        Success :
+            {
+                "studentNew": {
+                    "name": "Che Anh Minh",
+                    "email": "anhminh@gmail.com",
+                    "address": "Da Nang",
+                    "phone": "012345678",
+                    "university": "Cao Dang Cong Nghe",
+                    "updated_at": "2020-07-07 11:29:24",
+                    "created_at": "2020-07-07 11:29:24",
+                    "id": 3
+                },
+                "status": true,
+                "code": 201
+            }
+        Fails :
+            {
+                "status": false,
+                "code": 500,
+                "message": "Undefined variable: student"
+            }
+        Fails Validator :
+            {
+                "name": [
+                    "The name field is required."
+                ],
+                "email": [
+                    "The email field is required."
+                ]
+            }
+- Update Student :
+    * URL : /api/student
+    * Method : POST
+    * Request : /api/student/2
+    * Resource :
+        Success :
+            {
+                "student": {
+                    "id": 2,
+                    "name": "Le Minh Duc",
+                    "email": "minhduc@gmail.com",
+                    "address": "Thanh pho Hue",
+                    "phone": "08080808",
+                    "university": "Dai hoc Khoa Hoc Hue",
+                    "created_at": null,
+                    "updated_at": "2020-07-07 18:42:33"
+                },
+                "status": true,
+                "code": 200
+            }
+        Fails :
+            {
+                "status": false,
+                "code": 500,
+                "message": "Undefined variable: students"
+            }
+- Delete Student :
+    * URL : /api/student
+    * Method : DELETE
+    * Request : /api/student/2
+    * Resource :
+        Success :
+            {
+                "status": true,
+                "code": 204
+            }
+        Fails :
+            {
+                "status": false,
+                "code": 500,
+                "message": "Undefined variable: students"
+            }
+

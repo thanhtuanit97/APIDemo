@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "86f6df74-b410-4f32-a6bd-1d97b1828f02",
+		"name": "APIDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List Student",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "APP_KEY",
+						"value": "ABCDEFGHIJK",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://apidemo.com/api/student",
+					"protocol": "http",
+					"host": [
+						"apidemo",
+						"com"
+					],
+					"path": [
+						"api",
+						"student"
+					]
+				},
+				"description": "get list students"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Student byID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "APP_KEY",
+						"value": "ABCDEFGHIJK",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://apidemo.com/api/student/3",
+					"protocol": "http",
+					"host": [
+						"apidemo",
+						"com"
+					],
+					"path": [
+						"api",
+						"student",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Minh Dũng",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "minhdung@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "Da Nang",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "0909090909",
+							"type": "text"
+						},
+						{
+							"key": "university",
+							"value": "Bách Khoa Đà Nẵng",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://apidemo.com/api/student",
+					"protocol": "http",
+					"host": [
+						"apidemo",
+						"com"
+					],
+					"path": [
+						"api",
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Student ",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://apidemo.com/api/student/6?name=Nguyễn Minh Dũng",
+					"protocol": "http",
+					"host": [
+						"apidemo",
+						"com"
+					],
+					"path": [
+						"api",
+						"student",
+						"6"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Nguyễn Minh Dũng"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Student",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://apidemo.com/api/student/99",
+					"protocol": "http",
+					"host": [
+						"apidemo",
+						"com"
+					],
+					"path": [
+						"api",
+						"student",
+						"99"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
